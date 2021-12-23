@@ -1,0 +1,46 @@
+.checkbox {
+  input {
+    display: none;
+
+    & + label {
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      width: 4rem;
+      height: 2.5rem;
+      border-radius: 2.5rem;
+      background-color: rgba(120, 120, 128, 0.16);
+      transition: all 150ms ease-in-out;
+
+      &:after {
+        position: absolute;
+        content: "";
+        display: block;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 100%;
+        background-color: white;
+        top: 50%;
+        left: 0;
+        transform: translate(3px, -50%);
+        box-shadow: -0 1px 2px 0 rgba(0, 0, 0, 0.15),
+          0 2px 1px 0 rgba(0, 0, 0, 0.06);
+        transition: all 150ms ease-in-out;
+      }
+    }
+    &:checked + label {
+      background-color: #08c975;
+      &:after {
+        transform: translate(17px, -50%);
+        box-shadow: -0 1px 2px 0 rgba(0, 0, 0, 0.15),
+          1px 3px 1px 0 rgba(0, 0, 0, 0.06);
+      }
+    }
+  }
+
+  &.disabled {
+    input + label {
+      cursor: not-allowed;
+    }
+  }
+}

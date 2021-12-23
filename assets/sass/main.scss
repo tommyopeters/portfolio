@@ -1,0 +1,33 @@
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+
+@import 'base/animations';
+@import 'base/base';
+// @import 'base/grid';
+@import 'base/typography';
+@import 'base/utilities';
+
+@import 'components/buttons';
+// @import 'components/checkbox-switch';
+// @import 'components/datepicker';
+// @import 'components/modals';
+// @import 'components/select-input';
+// @import 'components/table';
+
+@import 'pages/home';
+@import 'pages/content';
+
+.sidebar-menu {
+  background: #111;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  width: 20%;
+}
+
+.sidebar-menu.hidex {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}

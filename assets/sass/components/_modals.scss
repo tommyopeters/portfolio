@@ -1,0 +1,647 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+
+  z-index: 99999999;
+  overflow-y: auto;
+
+  &-item {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  &-content {
+    position: relative;
+    padding: 2rem;
+    // min-width: 400px;
+    // min-height: 300px;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.04),
+      0 6px 10px 0 rgba(0, 0, 0, 0.06), 0 1px 18px 0 rgba(0, 0, 0, 0.05);
+
+    .modal-header {
+      color: #01051b;
+      width: 100%;
+      // text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 2.5rem;
+
+      h2 {
+        font-size: 14px;
+      }
+    }
+    .modal-body {
+      max-height: 80vh;
+      overflow-y: auto;
+
+      .approval,
+      .checkbox-group {
+        color: #545454;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .approval {
+        user-select: none;
+        input {
+          display: none;
+
+          + label {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            column-gap: 1rem;
+            span {
+              position: relative;
+              margin-top: 3px;
+              display: inline-block;
+              height: 1.5rem;
+              width: 1.5rem;
+              border-radius: 2px;
+              border: 2px solid #6d6d6d;
+            }
+          }
+
+          &:checked {
+            + label {
+              span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-color: #0060df;
+                background-color: #0060df;
+                &::after {
+                  content: "\2713";
+                  font-size: 1.1rem;
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .action-row {
+        width: 40rem;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: 768px) {
+          width: 32rem;
+        }
+
+        .back,
+        .cancel {
+          color: #037ae9;
+          font-family: Nunito;
+          font-size: 16px;
+          font-weight: bold;
+
+          cursor: pointer;
+
+          i {
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.8rem;
+      line-height: 1.8rem;
+      padding: 1.5rem;
+      cursor: pointer;
+      color: #111c55;
+    }
+    .buttons-row {
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .cancel {
+      margin: 2rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #037ae9;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}
+#savings-plans {
+  .modal-content {
+    .modal-header {
+      text-align: start;
+      margin: 1rem 1rem 3.5rem;
+      h2 {
+        width: 100%;
+        text-align: start;
+        color: #111c55;
+        font-size: 18px;
+        font-weight: 800;
+      }
+    }
+    .modal-body {
+      .savings-cards {
+        // display: grid;
+        // grid-template-columns: 1fr 1fr;
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+
+        .savings-card {
+          transform: scale(0.95);
+          width: 15rem;
+          height: 20rem;
+          display: flex;
+          flex-direction: column;
+          border-radius: 2rem;
+          padding: 2rem 1.5rem 0;
+          color: white;
+
+          transition: all 200ms ease-in-out;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1);
+          }
+
+          h3 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+          }
+          small {
+            font-size: 12px;
+
+            strong {
+              font-size: 18px;
+              font-weight: 800;
+            }
+          }
+          p {
+            font-size: 14px;
+          }
+          .icon {
+            height: 100%;
+            flex-grow: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            .image-control {
+              height: 6rem;
+            }
+          }
+
+          &.digitarget-card {
+            background-color: #648aff;
+          }
+          &.digilock-card {
+            background-color: #ffa053;
+          }
+        }
+      }
+      .cancel {
+        width: 100%;
+        text-align: center;
+        margin-top: 3rem;
+        color: #037ae9;
+        font-size: 16px;
+        font-weight: bold;
+
+        cursor: pointer;
+      }
+    }
+  }
+}
+.create-digi {
+  .modal-content {
+    max-width: 50rem;
+
+    .modal-header {
+      margin: 3rem 2rem;
+      h2 {
+        color: #111c55;
+        font-size: 24px;
+        font-weight: 800;
+      }
+    }
+    .modal-body {
+      padding: 0 2rem;
+      max-height: none;
+
+      @media (max-width: 768px) {
+        padding: 0;
+      }
+      form {
+        .form-group {
+          input {
+            height: 4rem;
+          }
+        }
+        .approval {
+          margin-top: 2.5rem;
+          label,
+          input {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      max-width: 360px;
+
+      .modal-header {
+        margin: 0;
+
+        margin-bottom: 2rem;
+        h2 {
+          font-size: 22px;
+        }
+      }
+    }
+    @media (max-width: 360px) {
+      width: 100%;
+      height: 100vh;
+      border-radius: 0;
+
+      .modal-header {
+        margin: 0;
+
+        margin-bottom: 4rem;
+        h2 {
+          font-size: 22px;
+        }
+      }
+      .modal-body {
+        form {
+          .form-group {
+            margin-bottom: 2.5rem;
+
+            input {
+              height: 3.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  &#create-digitarget {
+    .modal-content {
+      .modal-body {
+        form {
+          .checkbox-group {
+            cursor: pointer;
+          }
+          .buttons-row {
+            margin: 3rem 0;
+
+            .btn {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  &#create-digilock {
+    form {
+      .form-group {
+        margin-bottom: 2rem;
+      }
+    }
+    @media (max-width: 360px) {
+      max-height: none;
+    }
+  }
+}
+.review-digi {
+  .modal-content {
+    .modal-header {
+      padding: 6rem 4rem 0;
+
+      @media (max-width: 768px) {
+        padding: 3rem 0 0;
+      }
+      h2 {
+        text-align: center;
+        color: #111c55;
+        font-size: 24px;
+        font-weight: 800;
+      }
+    }
+    .modal-body {
+      padding: 0 4rem 5rem;
+
+      @media (max-width: 768px) {
+        padding: 0 0 1rem;
+      }
+      .card-header {
+        margin: 0 auto;
+        width: 55rem;
+        border-radius: 1rem;
+
+        display: grid;
+        grid-template-columns: 13rem 1fr 13rem;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 768px) {
+          width: 32rem;
+          grid-template-columns: 6rem 1fr 6rem;
+        }
+
+        .left {
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          height: 100%;
+
+          .image-control {
+            height: 5rem;
+            opacity: 0.15;
+
+            @media (max-width: 768px) {
+              height: 4rem;
+            }
+          }
+        }
+        .main {
+          height: 8rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          align-items: center;
+
+          color: #ffffff;
+          font-size: 18px;
+          font-weight: 800;
+        }
+      }
+      ul.digilock-review {
+        margin: 2.5rem 0 4.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2.5rem;
+        row-gap: 1.2rem;
+
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr;
+        }
+
+        li {
+          small {
+            color: #545454;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 8px;
+          }
+          .value {
+            width: 100%;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            padding: 8px 1.5rem;
+            border-radius: 5px;
+            background-color: rgba(100, 209, 255, 0.1);
+
+            color: #2a2a2a;
+            font-size: 16px;
+            font-weight: 800;
+
+            &.green {
+              background-color: #e1faf1;
+              color: #00c770;
+            }
+          }
+
+          &.span-double-column {
+            grid-column: 1 / span 2;
+          }
+        }
+      }
+      .buttons-row {
+        margin: 3rem 0;
+
+        .btn {
+          width: 80%;
+        }
+      }
+    }
+  }
+  &#review-digilock {
+    .modal-content {
+      .modal-body {
+        .card-header {
+          background-color: #ffa053;
+        }
+      }
+    }
+  }
+  &#review-digitarget {
+    .modal-content {
+      .modal-body {
+        .card-header {
+          background-color: #648aff;
+        }
+      }
+    }
+  }
+}
+#automate-savings {
+  .modal-content {
+    min-width: 34rem;
+    .modal-header {
+      h2 {
+        color: #111c55;
+        font-size: 18px;
+        font-weight: 800;
+      }
+    }
+    .modal-body {
+      overflow-y: visible;
+      .action-row {
+        margin: 2.5rem 0 2rem;
+        padding: 0 1rem;
+      }
+    }
+  }
+}
+
+.modal-select {
+  .display {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 3.6rem;
+    padding: 1.6rem 1rem;
+    border: 1px solid #cfcfcf;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &.error {
+      border-color: #eb0909;
+    }
+  }
+}
+#select-modal {
+  .modal-content {
+    min-width: 32rem;
+
+    .modal-body {
+      overflow: hidden;
+      height: 80vh;
+
+      input {
+        border-width: 2px;
+      }
+
+      ul.select-list {
+        max-height: 70vh;
+        overflow: auto;
+        margin-top: 1rem;
+
+        li {
+          width: 100%;
+          color: #000000;
+          border-radius: 1rem;
+          padding: 8px 1rem;
+          cursor: pointer;
+          transition: all ease-in-out 200ms;
+
+          &:hover {
+            background-color: #648bff29;
+          }
+          &.active {
+            background-color: #648aff;
+          }
+        }
+      }
+    }
+  }
+}
+.withrawal-modal,
+#digiwallet-topup {
+  .modal-content {
+    min-width: 34rem;
+
+    &.withrawal-details {
+      ul {
+        margin: 2rem 1rem 5rem;
+        li {
+          margin-bottom: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .title {
+            color: #111c55;
+            font-size: 14px;
+            font-weight: bold;
+          }
+          .amount {
+            color: #545454;
+            font-size: 14px;
+            letter-spacing: 0;
+          }
+        }
+      }
+    }
+  }
+  h1 {
+    font-size: 2rem;
+    color: $main-color;
+  }
+  .buttons-row {
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+}
+#digikolo-topup {
+  .modal-content {
+    min-width: 34rem;
+  }
+  h1 {
+    font-size: 2rem;
+    color: $main-color;
+  }
+}
+#cash-deposit {
+  .modal-content {
+    width: 34rem;
+    .modal-header {
+      h2 {
+        margin-top: 5px;
+        font-size: 1.8rem;
+        color: $main-color;
+      }
+    }
+    .modal-body {
+      .form-group {
+        margin-bottom: 2rem;
+        small {
+          font-size: 1.3rem;
+          font-weight: 600;
+          opacity: 0.6;
+        }
+        p {
+          font-weight: 600;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+#new-transfer {
+  .modal-content {
+    min-width: 35rem;
+    .modal-body {
+      .account-lookup {
+        height: 4rem;
+        border-radius: 10px;
+        background-color: #e7f7ff;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.5rem;
+
+        color: #111c55;
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: -1rem;
+        margin-bottom: 2rem;
+
+        &.error {
+          background-color: #fae5e5;
+          color: #c61c1c;
+        }
+      }
+    }
+  }
+}
+
+// @media (max-width: 660) {
+
+// }
