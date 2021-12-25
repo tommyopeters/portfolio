@@ -8,8 +8,10 @@
           build stuff for fun (and for a living).
         </h3>
         <div class="info-list row">
-          <div class="col-sm-6"><span>Name : </span> Tommy O' Peters</div>
-          <div class="col-sm-6">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <span>Name : </span> Tommy O' Peters
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
             <span>Email : </span> tommyopeters@gmail.com
           </div>
           <!-- <div class="col-sm-6"><span>Phone : </span> +234 817 212 7320</div> -->
