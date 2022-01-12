@@ -8,261 +8,41 @@
             <div class="filters">
               <span>Filters :</span>
               <ul id="filters">
-                <li class="active" data-filter="*">All</li>
-                <li data-filter=".photography">Photography</li>
-                <li data-filter=".webdesign">Web Design</li>
-                <li data-filter=".design">Design</li>
-                <li data-filter=".game">Game</li>
+                <li
+                  v-for="(filter_name, index) in filters"
+                  :key="index"
+                  @click="filter(filter_name)"
+                >
+                  {{
+                    filter_name == '*'
+                      ? 'All'
+                      : filter_name[0].toUpperCase() + filter_name.substring(1)
+                  }}
+                </li>
               </ul>
             </div>
             <div
-              class="portfolio-container row isotope"
               id="portfolio-container"
-              style="position: relative; height: 1076.62px"
+              class="portfolio-container row isotope"
             >
-              <!-- WORK 1 START -->
               <div
-                class="col-md-4 col-sm-6 col-xs-12 portfolio-item photography"
-                style="position: absolute; left: 0px; top: 0px"
+                class="portfolio-item col-md-4 col-sm-6 col-xs-12"
+                :class="project.group"
+                v-for="(project, index) in projectList"
+                :key="index"
               >
-                <a class="open-project" href="phoneography.html">
-                  <div class="portfolio-column">
-                    <div class="portfolio-hover">
-                      <div class="portfolio-content">
-                        <h2>PHONEOGRAPHY</h2>
-                        <hr />
-                        <p>View similar.</p>
-                      </div>
-                      <div class="portfolio-overlay"></div>
+                <div class="portfolio-column">
+                  <div class="portfolio-hover">
+                    <div class="portfolio-content">
+                      <h2>{{ project.group.toUpperCase() }}</h2>
+                      <hr />
+                      <p>View similar.</p>
                     </div>
-                    <img src="images/portfolio/masonry/001.jpg" alt="" />
+                    <div class="portfolio-overlay"></div>
                   </div>
-                </a>
+                  <img @load="onImageLoad" :src="project.img" alt="" />
+                </div>
               </div>
-              <!-- WORK 1 END -->
-              <!-- WORK 2 START -->
-              <div
-                class="col-md-4 col-sm-6 col-xs-12 portfolio-item webdesign"
-                style="position: absolute; left: 262px; top: 0px"
-              >
-                <a class="open-project" href="#">
-                  <div class="portfolio-column">
-                    <div class="portfolio-hover">
-                      <div class="portfolio-content">
-                        <h2>OAKBOOKS</h2>
-                        <hr />
-                        <p>View details.</p>
-                      </div>
-                      <div class="portfolio-overlay"></div>
-                    </div>
-                    <img src="images/portfolio/masonry/002.jpg" alt="" />
-                  </div>
-                </a>
-              </div>
-              <!-- WORK 2 END -->
-              <!-- WORK 3 START -->
-              <div
-                class="col-md-4 col-sm-6 col-xs-12 portfolio-item game"
-                style="position: absolute; left: 524px; top: 0px"
-              >
-                <a
-                  class="open-project"
-                  href="https://tommyopeters-blackjackgame.netlify.com"
-                >
-                  <div class="portfolio-column">
-                    <div class="portfolio-hover">
-                      <div class="portfolio-content">
-                        <h2>BLACKJACK</h2>
-                        <hr />
-                        <p>Play game.</p>
-                      </div>
-                      <div class="portfolio-overlay"></div>
-                    </div>
-                    <img src="images/portfolio/masonry/003.jpg" alt="" />
-                  </div>
-                </a>
-              </div>
-              <!-- WORK 3 END -->
-              <!-- WORK 4 START -->
-              <div
-                class="col-md-4 col-sm-6 col-xs-12 portfolio-item design"
-                style="position: absolute; left: 524px; top: 149px"
-              >
-                <a class="open-project" href="#">
-                  <div class="portfolio-column">
-                    <div class="portfolio-hover">
-                      <div class="portfolio-content">
-                        <h2>DECIBELS</h2>
-                        <hr />
-                        <p>View details.</p>
-                      </div>
-                      <div class="portfolio-overlay"></div>
-                    </div>
-                    <img src="images/portfolio/masonry/004.jpg" alt="" />
-                  </div>
-                </a>
-              </div>
-              <!-- WORK 4 END -->
-              <!-- WORK 5 START -->
-              <div
-                class="col-md-4 col-sm-6 col-xs-12 portfolio-item photography"
-                style="position: absolute; left: 262px; top: 175px"
-              >
-                <a class="open-project" href="#">
-                  <div class="portfolio-column">
-                    <div class="portfolio-hover">
-                      <div class="portfolio-content">
-                        <h2>CONCEPT</h2>
-                        <hr />
-                        <p>View similar.</p>
-                      </div>
-                      <div class="portfolio-overlay"></div>
-                    </div>
-                    <img src="images/portfolio/masonry/005.jpg" alt="" />
-                  </div>
-                </a>
-              </div>
-              <!-- WORK 5 END -->
-              <!-- WORK 6 START -->
-              <div
-                class="col-md-4 col-sm-6 col-xs-12 portfolio-item photography"
-                style="position: absolute; left: 524px; top: 329px"
-              >
-                <a class="open-project" href="#">
-                  <div class="portfolio-column">
-                    <div class="portfolio-hover">
-                      <div class="portfolio-content">
-                        <h2>KIDS</h2>
-                        <hr />
-                        <p>View similar.</p>
-                      </div>
-                      <div class="portfolio-overlay"></div>
-                    </div>
-                    <img src="images/portfolio/masonry/006.jpg" alt="" />
-                  </div>
-                </a>
-              </div>
-              <!-- WORK 6 END -->
-              <!-- WORK 7 START -->
-              <div
-                class="col-md-4 col-sm-6 col-xs-12 portfolio-item design"
-                style="position: absolute; left: 0px; top: 363px"
-              >
-                <a class="open-project" href="#">
-                  <div class="portfolio-column">
-                    <div class="portfolio-hover">
-                      <div class="portfolio-content">
-                        <h2>CARTOONIZE</h2>
-                        <hr />
-                        <p>View details.</p>
-                      </div>
-                      <div class="portfolio-overlay"></div>
-                    </div>
-                    <img src="images/portfolio/masonry/007.jpg" alt="" />
-                  </div>
-                </a>
-              </div>
-              <!-- WORK 7 END -->
-              <!-- WORK 8 START -->
-              <div
-                class="col-md-4 col-sm-6 col-xs-12 portfolio-item webdesign"
-                style="position: absolute; left: 524px; top: 514px"
-              >
-                <a class="open-project" href="#">
-                  <div class="portfolio-column">
-                    <div class="portfolio-hover">
-                      <div class="portfolio-content">
-                        <h2>ADEPT CREATIONS</h2>
-                        <hr />
-                        <p>View details.</p>
-                      </div>
-                      <div class="portfolio-overlay"></div>
-                    </div>
-                    <img src="images/portfolio/masonry/008.jpg" alt="" />
-                  </div>
-                </a>
-              </div>
-              <!-- WORK 8 END -->
-              <!-- WORK 9 START -->
-              <div
-                class="col-md-4 col-sm-6 col-xs-12 portfolio-item photography"
-                style="position: absolute; left: 262px; top: 553px"
-              >
-                <a class="open-project" href="#">
-                  <div class="portfolio-column">
-                    <div class="portfolio-hover">
-                      <div class="portfolio-content">
-                        <h2>CONCEPT</h2>
-                        <hr />
-                        <p>View similar.</p>
-                      </div>
-                      <div class="portfolio-overlay"></div>
-                    </div>
-                    <img src="images/portfolio/masonry/009.jpg" alt="" />
-                  </div>
-                </a>
-              </div>
-              <!-- WORK 9 END -->
-              <!-- WORK 10 START -->
-              <div
-                class="col-md-4 col-sm-6 col-xs-12 portfolio-item photography"
-                style="position: absolute; left: 524px; top: 666px"
-              >
-                <a class="open-project" href="#">
-                  <div class="portfolio-column">
-                    <div class="portfolio-hover">
-                      <div class="portfolio-content">
-                        <h2>BRAND</h2>
-                        <hr />
-                        <p>View similar.</p>
-                      </div>
-                      <div class="portfolio-overlay"></div>
-                    </div>
-                    <img src="images/portfolio/masonry/010.jpg" alt="" />
-                  </div>
-                </a>
-              </div>
-              <!-- WORK 10 END -->
-              <!-- WORK 11 START -->
-              <div
-                class="col-md-4 col-sm-6 col-xs-12 portfolio-item photography"
-                style="position: absolute; left: 0px; top: 698px"
-              >
-                <a class="open-project" href="#">
-                  <div class="portfolio-column">
-                    <div class="portfolio-hover">
-                      <div class="portfolio-content">
-                        <h2>CONCEPT</h2>
-                        <hr />
-                        <p>View similar.</p>
-                      </div>
-                      <div class="portfolio-overlay"></div>
-                    </div>
-                    <img src="images/portfolio/masonry/011.jpg" alt="" />
-                  </div>
-                </a>
-              </div>
-              <!-- WORK 11 END -->
-              <!-- WORK 12 START -->
-              <div
-                class="col-md-4 col-sm-6 col-xs-12 portfolio-item photography"
-                style="position: absolute; left: 262px; top: 737px"
-              >
-                <a class="open-project" href="#">
-                  <div class="portfolio-column">
-                    <div class="portfolio-hover">
-                      <div class="portfolio-content">
-                        <h2>EVENT</h2>
-                        <hr />
-                        <p>View similar.</p>
-                      </div>
-                      <div class="portfolio-overlay"></div>
-                    </div>
-                    <img src="images/portfolio/masonry/012.jpg" alt="" />
-                  </div>
-                </a>
-              </div>
-              <!-- WORK 12 END -->
             </div>
           </div>
         </div>
@@ -279,6 +59,130 @@
 <script>
 export default {
   props: ['open'],
+  data() {
+    return {
+      imageLoadCounter: 0,
+      projectList: [
+        {
+          link: 'game/blackjack',
+          name: 'Blackjack',
+          group: 'game',
+          img: '/masonry/games/blackjack/001.png',
+          video: null,
+        },
+        {
+          link: 'phoneography',
+          name: 'Phoneography',
+          group: 'phoneography',
+          img: '/masonry/phoneography/001.jpg',
+          video: null,
+        },
+        {
+          link: 'game/monopoly',
+          name: 'Monopoly',
+          group: 'game',
+          img: '/masonry/games/monopoly/001.png',
+          video: null,
+        },
+        {
+          link: 'phoneography',
+          name: 'Phoneography',
+          group: 'phoneography',
+          img: '/masonry/phoneography/002.jpg',
+          video: null,
+        },
+        {
+          link: 'phoneography',
+          name: 'Phoneography',
+          group: 'phoneography',
+          img: '/masonry/phoneography/003.jpg',
+          video: null,
+        },
+        {
+          link: 'photography',
+          name: 'Photography',
+          group: 'photography',
+          img: '/masonry/photography/001.jpg',
+          video: null,
+        },
+      ],
+      currentFilter: '*',
+      isotope: null,
+    }
+  },
+  computed: {
+    filters: function () {
+      let filters = ['*']
+      this.projectList.forEach((project) => {
+        if (!filters.includes(project.group)) {
+          filters.push(project.group)
+        }
+      })
+      console.log(filters)
+      return filters
+    },
+  },
+  methods: {
+    relayoutGrid() {
+      setTimeout(() => {
+        // let elem = document.querySelector('.grid')
+        // this.isotope = new isotope(elem, {
+        //   itemSelector: '.card',
+        //   layoutMode: 'masonry',
+        // })
+        this.isotope = $('#portfolio-container')
+        this.isotope.isotope({
+          itemSelector: '.portfolio-item',
+
+          percentPosition: true,
+          // columnWidth: 200,
+          masonry: {
+            columnWidth: '.portfolio-item',
+          },
+          filter: '*',
+        })
+      }, 5)
+    },
+    onImageLoad() {
+      this.imageLoadCounter++
+      if (this.imageLoadCounter == this.projectList.length) {
+        console.log('IMAGES LOADED')
+        this.relayoutGrid()
+        // this.imageLoadCounter = 0
+      }
+    },
+    filter(item) {
+      this.currentFilter = item
+      console.log(`this.isotope.isotope({ filter: ${item} })`)
+      this.isotope.isotope({ filter: item == '*' ? item : '.' + item })
+    },
+  },
+  created() {},
+
+  // mounted() {
+  //   var $container = $('#portfolio-container')
+
+  //   console.log($container.isotope)
+  //   if (this.open) {
+  //     //Portfolio masonry
+  //     var $container = $('#portfolio-container')
+
+  //     console.log($container.isotope)
+  //     $container.isotope({
+  //       filter: '*',
+  //       masonry: {
+  //         columnWidth: '.portfolio-item',
+  //       },
+  //       itemSelector: '.portfolio-item',
+  //     })
+  //   }
+  //   // $('#filters').on('click', 'li', function () {
+  //   //   $('#filters li').removeClass('active')
+  //   //   $(this).addClass('active')
+  //   //   var filterValue = $(this).attr('data-filter')
+  //   //   $container.isotope({ filter: filterValue })
+  //   // })
+  // },
 }
 </script>
 

@@ -158,9 +158,12 @@
     }
     .row {
       display: flex;
-      flex-wrap: wrap;
       margin-right: -15px;
       margin-left: -15px;
+
+      // &:not(.grid) {
+      flex-wrap: wrap;
+      // }
     }
     .info-list {
       border-bottom: 1px solid #ddd;
@@ -470,4 +473,107 @@ element {
 .contact-details h5,
 .contact-details p {
   margin-bottom: 0;
+}
+
+// PORTFOLIO CONTENT || TO BE MOVED
+.portfolio-container {
+  overflow: hidden;
+  position: relative;
+
+  .portfolio-item {
+    padding-bottom: 30px;
+
+    .portfolio-column {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+
+      transition: all 1s;
+
+      .portfolio-content {
+        position: absolute;
+        z-index: 201;
+        top: 50%;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(-50%);
+
+        h2 {
+          color: #fff;
+          position: relative;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          margin-top: 0px;
+          margin-top: 30px;
+          text-align: center;
+          padding: 0 30px;
+          opacity: 0;
+          text-transform: uppercase;
+          transition: all 0.6s;
+        }
+        hr {
+          width: 40px;
+          height: 1px;
+          border: 0;
+          background-color: #f1f3f6;
+          margin: 20px 0 10px;
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        p {
+          color: #fff;
+          font-size: 12px;
+          font-weight: 400;
+          position: relative;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          margin-top: 0px;
+          margin-top: -30px;
+          text-align: center;
+          padding: 10px 30px;
+          opacity: 0;
+          transition: all 0.9s;
+        }
+      }
+      .portfolio-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #181818;
+        top: 0;
+        z-index: 200;
+        opacity: 0;
+
+        cursor: pointer;
+      }
+
+      &:hover {
+        box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.3);
+
+        .portfolio-content {
+          opacity: 1;
+          cursor: pointer;
+
+          p {
+            margin-top: 0;
+            opacity: 1;
+          }
+          h2 {
+            margin-top: 20px;
+            opacity: 1;
+          }
+        }
+        .portfolio-overlay {
+          opacity: 0.8;
+        }
+      }
+    }
+    img {
+      width: 100%;
+      transition: all 5s;
+    }
+  }
 }

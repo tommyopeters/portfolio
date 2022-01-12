@@ -20,6 +20,15 @@ export default {
     ],
     script: [
       {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
+      },
+      {
+        src: 'https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js',
+      },
+      {
+        src: 'https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js',
+      },
+      {
         src: 'https://kit.fontawesome.com/8509b10269.js',
       },
     ],
@@ -29,7 +38,10 @@ export default {
   css: ['~/assets/bootstrap.min.css', '~/assets/sass/main.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/VueTypewriter.js', mode: 'client' }],
+  plugins: [
+    { src: '~/plugins/VueTypewriter.js', mode: 'client' },
+    // { src: '~/plugins/Isotope.js', mode: 'client' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
