@@ -1,6 +1,6 @@
 <template>
   <div class="content-blocks portfolio" :class="{ showx: open }">
-    <section class="content">
+    <section class="content" v-if="!scope">
       <div class="block-content">
         <h3 class="block-title">Portfolio</h3>
         <div class="row">
@@ -31,10 +31,13 @@
                 v-for="(project, index) in projectList"
                 :key="index"
               >
-                <div class="portfolio-column">
+                <div
+                  class="portfolio-column"
+                  @click="changeScope(project.scope)"
+                >
                   <div class="portfolio-hover">
                     <div class="portfolio-content">
-                      <h2>{{ project.group.toUpperCase() }}</h2>
+                      <h2>{{ project.name.toUpperCase() }}</h2>
                       <hr />
                       <p>View similar.</p>
                     </div>
@@ -53,6 +56,61 @@
         </div>
       </div>
     </section>
+    <section class="content" v-else>
+      <div class="block-content">
+        <div class="project-head">
+          <h1 class="block-title">Single Project - Gallery</h1>
+          <div class="tags"><span>Category : </span> Graphic / Apps</div>
+          <div class="tags"><span>Client : </span> NHS</div>
+          <div class="tags"><span>Completion : </span> February 2017</div>
+          <div class="tags"><span>Role : </span> Art Direction</div>
+        </div>
+        <p class="project-description">
+          Omnium nominati prodesset pri no. Per dolor gloriatur persequeris ad,
+          te his aliquip molestie. Veri tantas ad usu, mel ne sonet quaeque
+          assueverit. Enim eruditi euripidis his et, dictas admodum posidonium
+          ei pro. An duo tempor maluisset honestatis. Lorem ipsum dolor sit
+          amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+          tincidunt ut laoreet.Est sint magna mucius te, iudico integre
+          gubergren no vis. Assum doming et pro, est ei inermis corpora
+          argumentum. Eos graece sadipscing et, pri dico salutandi consetetur
+          et, explicari voluptatum mei at. Ex cum nisl epicurei, sea in molestie
+          theophrastus, nibh tollit apeirian no vis. Eum an vocibus gubergren
+          intellegam, quo id soluta iisque phaedrum.
+        </p>
+        <div class="project-media row">
+          <div class="col-md-4">
+            <img src="/masonry/phoneography/001.jpg" alt="" />
+          </div>
+          <div class="col-md-4">
+            <img src="/masonry/phoneography/002.jpg" alt="" />
+          </div>
+          <div class="col-md-4">
+            <img src="/masonry/phoneography/003.jpg" alt="" />
+          </div>
+        </div>
+        <div class="project-nav text-center">
+          <span class="float-left">
+            <a class="open-project" href="project-6.html"
+              >&leftarrow; Previous Project</a
+            >
+          </span>
+          <span class="">
+            <a id="close-project" href="#"><i class="ion-grid"></i></a>
+          </span>
+          <span class="float-right">
+            <a class="open-project" href="project-2.html"
+              >Next Project &rightarrow;
+            </a>
+          </span>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-12 btn-email">
+          <a class="btn lowercase">shout@james.com</a>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -64,50 +122,60 @@ export default {
       imageLoadCounter: 0,
       projectList: [
         {
-          link: 'game/blackjack',
+          scope: 0,
           name: 'Blackjack',
           group: 'game',
           img: '/masonry/games/blackjack/001.png',
           video: null,
         },
         {
-          link: 'phoneography',
+          scope: 0,
           name: 'Phoneography',
           group: 'phoneography',
           img: '/masonry/phoneography/001.jpg',
           video: null,
         },
         {
-          link: 'game/monopoly',
+          scope: 0,
           name: 'Monopoly',
           group: 'game',
           img: '/masonry/games/monopoly/001.png',
           video: null,
         },
         {
-          link: 'phoneography',
+          scope: 0,
           name: 'Phoneography',
           group: 'phoneography',
           img: '/masonry/phoneography/002.jpg',
           video: null,
         },
         {
-          link: 'phoneography',
+          scope: 0,
+          name: 'Music with Celine',
+          group: 'music',
+          img: '/masonry/music/celine/003.jpg',
+          video: null,
+        },
+        {
+          scope: 0,
           name: 'Phoneography',
           group: 'phoneography',
           img: '/masonry/phoneography/003.jpg',
           video: null,
         },
         {
-          link: 'photography',
+          scope: 0,
           name: 'Photography',
           group: 'photography',
           img: '/masonry/photography/001.jpg',
           video: null,
         },
       ],
+      scopes: [{}],
       currentFilter: '*',
       isotope: null,
+      scope: false,
+      currentScope: 0,
     }
   },
   computed: {
@@ -130,7 +198,7 @@ export default {
         //   itemSelector: '.card',
         //   layoutMode: 'masonry',
         // })
-        this.isotope = $('#portfolio-container')
+
         this.isotope.isotope({
           itemSelector: '.portfolio-item',
 
@@ -156,8 +224,14 @@ export default {
       console.log(`this.isotope.isotope({ filter: ${item} })`)
       this.isotope.isotope({ filter: item == '*' ? item : '.' + item })
     },
+    changeScope(scope) {
+      this.currentScope = scope
+      this.scope = true
+    },
   },
-  created() {},
+  mounted() {
+    this.isotope = $('#portfolio-container')
+  },
 
   // mounted() {
   //   var $container = $('#portfolio-container')

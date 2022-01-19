@@ -3,6 +3,7 @@
     <section class="content">
       <div class="block-content">
         <h3 class="block-title">My Blog</h3>
+
         <!-- <div class="row">
                             <div class="col-md-10 mx-auto">
                                 <div class="post">

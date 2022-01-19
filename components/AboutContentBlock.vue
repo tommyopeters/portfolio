@@ -36,7 +36,7 @@
         </div>
         <label class="progress-bar-label"
           >Javascript(jQuery, Node.js, Vue.js, Nuxt.js, React.js, Express.js,
-          Webpack) - <span>2+ years experience</span></label
+          Webpack) - <span>3 years experience</span></label
         >
         <div class="progress">
           <div
@@ -113,8 +113,7 @@
                   <p>
                     Responsible for building and maintaining several application
                     front-end interfaces. Redesigned several pages to improve
-                    optimization, user experience, responsivity and implement
-                    new features
+                    usability, responsiveness and implement new features
                   </p>
                 </div>
 
@@ -139,7 +138,7 @@
                   </div>
                   <p>
                     Responsible for the building, update and maintenance of
-                    several clients’ websites and web applications. Implemented
+                    several clients' websites and web applications. Implemented
                     several functionalities on WordPress templates using PHP and
                     CSS.
                   </p>
