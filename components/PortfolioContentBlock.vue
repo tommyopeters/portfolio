@@ -107,7 +107,7 @@
       </div>
       <div class="row text-center">
         <div class="col-md-12 btn-email">
-          <a class="btn lowercase">shout@james.com</a>
+          <a class="btn lowercase">Holler at me</a>
         </div>
       </div>
     </section>
@@ -231,6 +231,7 @@ export default {
   },
   mounted() {
     this.isotope = $('#portfolio-container')
+    console.log(this.isotope)
   },
 
   // mounted() {
