@@ -5,7 +5,7 @@
         <h3 class="block-title">Profile</h3>
         <h3 class="subheading">
           I'm a <strong>Front-end Developer</strong> from Lagos, Nigeria. I
-          build stuff for fun (and for a living). I crack dad jokes, enjoy contrarianism and absolutely love working with people and exchanging ideas. Your pixels are my artbrush and my notepad.
+          build stuff for fun (and for a living). I'm loud but shy, I crack dad jokes, enjoy contrarianism and absolutely love working with people and exchanging ideas. Your pixels are my artbrush and my notepad.
         </h3>
         <div class="info-list row">
           <div class="col-md-6 col-sm-6 col-xs-12">
@@ -142,7 +142,7 @@
                     <h4>
                       <span>Front-End Developer</span> @ Sankore Investments
                     </h4>
-                    <h5>Apr 2020 - March 2022</h5>
+                    <h5 class="display-none">Apr 2020 - March 2022</h5>
                   </div>
                   <p>
                     <ul>
@@ -162,7 +162,7 @@
                     <h4>
                       <span>Front-End and Back-End Developer</span> @ Hotels.ng
                     </h4>
-                    <h5>Sept 2019 - Nov 2019</h5>
+                    <h5  class="display-none">Sept 2019 - Nov 2019</h5>
                   </div>
                   <p>
                     Intern in a ten-stage intensive bootcamp training that began with
@@ -174,7 +174,7 @@
                 <div class="exp">
                   <div class="hgroup">
                     <h4><span>Web Developer</span> @ Praxis Media</h4>
-                    <h5>Sept 2019 - Mar 2020</h5>
+                    <h5  class="display-none">Sept 2019 - Mar 2020</h5>
                   </div>
                   <p>
                     Responsible for the building, update and maintenance of
@@ -350,4 +350,8 @@ export default {
 .info-list.row div a:hover {
   color: #727272;
 }
+.display-none{
+  display: none !important;
+}
+
 </style>

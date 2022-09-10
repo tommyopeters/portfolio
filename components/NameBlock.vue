@@ -25,7 +25,7 @@
       </h2>
       <a
         target="_blank"
-        href="tommycv.docx"
+        href="tommyopeters_cv.pdf"
         download="Tommy O' Peters CV"
         class="btn btn-download"
         >Download Resume</a
