@@ -5,13 +5,16 @@
       <NameBlock :sidebarOpen="sidebarOpen" />
       <MenuBlocks :open="open" v-show="!sidebarOpen" />
       <template>
-        <AboutContentBlock :open="sidebarOpen && menu == 'about'" />
+        <AboutContentBlock
+          @open-contact="open('contact')"
+          :open="sidebarOpen && menu == 'about'"
+        />
         <PortfolioContentBlock :open="sidebarOpen && menu == 'portfolio'" />
         <BlogContentBlock :open="sidebarOpen && menu == 'blog'" />
         <ContactContentBlock :open="sidebarOpen && menu == 'contact'" />
         <div class="inline-menu-container" :class="{ showx: sidebarOpen }">
-          <span class="status contact menu-item active"
-            >I am available for hire</span
+          <span @click="open('contact')" class="status contact menu-item active"
+            >Message me</span
           >
           <ul class="inline-menu">
             <li

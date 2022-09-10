@@ -10,7 +10,16 @@
           :speed="200"
           :full-erase="true"
           :interval="500"
-          :words="['Developer', 'Photographer', 'Musician']"
+          :words="[
+            'Writer',
+            'Creative',
+            'Developer',
+            'Inbetweener',
+            'Photographer',
+            'Musician',
+            'Neurodivergent',
+            'Coach',
+          ]"
         >
         </typewriter>
       </h2>
