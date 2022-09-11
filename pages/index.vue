@@ -4,7 +4,7 @@
     <div class="container">
       <NameBlock :sidebarOpen="sidebarOpen" />
       <MenuBlocks :open="open" v-show="!sidebarOpen" />
-      <template>
+      <!-- <template>
         <AboutContentBlock
           @open-contact="open('contact')"
           :open="sidebarOpen && menu == 'about'"
@@ -50,7 +50,7 @@
             </li>
           </ul>
         </div>
-      </template>
+      </template> -->
     </div>
   </section>
 </template>

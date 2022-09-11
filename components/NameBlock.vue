@@ -19,6 +19,7 @@
             'Musician',
             'Neurodivergent',
             'Coach',
+            'Non-Conformist',
           ]"
         >
         </typewriter>
