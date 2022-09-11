@@ -464,12 +464,12 @@
   cursor: pointer;
   &:hover {
     h2.menu-item::before {
-      top: -20px;
-      left: -40px;
+      top: 30px;
+      left: -30px;
     }
     h2.menu-item::after {
-      top: 13px;
-      left: -40px;
+      top: 30px;
+      left: -30px;
     }
   }
 }

@@ -612,8 +612,8 @@ h2.contact.menu-item:before {
 }
 
 .menu-block:hover h2.menu-item:before {
-  top: -20px;
-  left: -40px;
+  top: 30px;
+  left: -30px;
 }
 
 h2.menu-item:after {
@@ -632,8 +632,8 @@ h2.menu-item:after {
 }
 
 .menu-block:hover h2.menu-item:after {
-  top: 12px;
-  left: -40px;
+  top: 30px;
+  left: -30px;
 }
 
 .menu-block:hover {
