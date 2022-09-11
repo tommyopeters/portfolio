@@ -13,7 +13,13 @@
             <div class="post">
               <div class="post-thumbnail">
                 <a class="open-post" href="post-single.html">
-                  <img src="images/blog/midium/4.jpg" alt="" />
+                  <nuxt-img
+                    format="webp"
+                    quality="100"
+                    loading="lazy"
+                    src="images/blog/midium/4.jpg"
+                    alt=""
+                  />
                 </a>
               </div>
               <div class="post-title">
@@ -41,7 +47,13 @@
             <div class="post">
               <div class="post-thumbnail">
                 <a class="open-post" href="post-single.html">
-                  <img src="images/blog/midium/3.jpg" alt="" />
+                  <nuxt-img
+                    format="webp"
+                    quality="100"
+                    loading="lazy"
+                    src="images/blog/midium/3.jpg"
+                    alt=""
+                  />
                 </a>
               </div>
               <div class="post-title">
@@ -69,7 +81,13 @@
             <div class="post">
               <div class="post-thumbnail">
                 <a class="open-post" href="post-single.html">
-                  <img src="images/blog/midium/2.jpg" alt="" />
+                  <nuxt-img
+                    format="webp"
+                    quality="100"
+                    loading="lazy"
+                    src="images/blog/midium/2.jpg"
+                    alt=""
+                  />
                 </a>
               </div>
               <div class="post-title">
@@ -97,7 +115,13 @@
             <div class="post">
               <div class="post-thumbnail">
                 <a class="open-post" href="post-single.html">
-                  <img src="images/blog/midium/1.jpg" alt="" />
+                  <nuxt-img
+                    format="webp"
+                    quality="100"
+                    loading="lazy"
+                    src="images/blog/midium/1.jpg"
+                    alt=""
+                  />
                 </a>
               </div>
               <div class="post-title">

@@ -43,7 +43,14 @@
                     </div>
                     <div class="portfolio-overlay"></div>
                   </div>
-                  <img @load="onImageLoad" :src="project.img" alt="" />
+                  <nuxt-img
+                    format="webp"
+                    quality="100"
+                    loading="lazy"
+                    @load="onImageLoad"
+                    :src="project.img"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
@@ -80,13 +87,31 @@
         </p>
         <div class="project-media row">
           <div class="col-md-4">
-            <img src="/masonry/phoneography/001.jpg" alt="" />
+            <nuxt-img
+              format="webp"
+              quality="100"
+              loading="lazy"
+              src="/masonry/phoneography/001.jpg"
+              alt=""
+            />
           </div>
           <div class="col-md-4">
-            <img src="/masonry/phoneography/002.jpg" alt="" />
+            <nuxt-img
+              format="webp"
+              quality="100"
+              loading="lazy"
+              src="/masonry/phoneography/002.jpg"
+              alt=""
+            />
           </div>
           <div class="col-md-4">
-            <img src="/masonry/phoneography/003.jpg" alt="" />
+            <nuxt-img
+              format="webp"
+              quality="100"
+              loading="lazy"
+              src="/masonry/phoneography/003.jpg"
+              alt=""
+            />
           </div>
         </div>
         <div class="project-nav text-center">

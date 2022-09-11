@@ -24,11 +24,29 @@
         </p>
         <div class="project-media row">
           <div class="col-md-6">
-            <img src="images/portfolio/masonry/001.jpg" alt="" />
+            <nuxt-img
+              format="webp"
+              quality="100"
+              loading="lazy"
+              src="images/portfolio/masonry/001.jpg"
+              alt=""
+            />
           </div>
           <div class="col-md-6">
-            <img src="images/portfolio/masonry/002.jpg" alt="" />
-            <img src="images/portfolio/masonry/004.jpg" alt="" />
+            <nuxt-img
+              format="webp"
+              quality="100"
+              loading="lazy"
+              src="images/portfolio/masonry/002.jpg"
+              alt=""
+            />
+            <nuxt-img
+              format="webp"
+              quality="100"
+              loading="lazy"
+              src="images/portfolio/masonry/004.jpg"
+              alt=""
+            />
           </div>
         </div>
         <div class="project-nav text-center">

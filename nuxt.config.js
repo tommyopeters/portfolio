@@ -16,20 +16,25 @@ export default {
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap',
+        async: true,
       },
     ],
     script: [
       {
         src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
+        defer: true,
       },
       {
         src: 'https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js',
+        defer: true,
       },
       {
         src: 'https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js',
+        defer: true,
       },
       {
         src: 'https://kit.fontawesome.com/8509b10269.js',
+        defer: true,
       },
     ],
   },
@@ -47,7 +52,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: ['@nuxt/image'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
