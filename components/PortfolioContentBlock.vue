@@ -1,6 +1,6 @@
 <template>
   <div class="content-blocks portfolio" :class="{ showx: open }">
-    <section class="content" v-if="!scope">
+    <section class="content" v-show="!scope">
       <div class="block-content">
         <h3 class="block-title">Portfolio</h3>
         <div class="row">
@@ -63,27 +63,20 @@
         </div>
       </div>
     </section>
-    <section class="content" v-else>
+    <section class="content" v-if="scope">
+      <div class="back" @click="scope = false">&lt; Back</div>
       <div class="block-content">
         <div class="project-head">
           <h1 class="block-title">Single Project - Gallery</h1>
           <div class="tags"><span>Category : </span> Graphic / Apps</div>
-          <div class="tags"><span>Client : </span> NHS</div>
-          <div class="tags"><span>Completion : </span> February 2017</div>
-          <div class="tags"><span>Role : </span> Art Direction</div>
+          <div class="tags"><span>Date : </span> 10/09/20222</div>
         </div>
         <p class="project-description">
-          Omnium nominati prodesset pri no. Per dolor gloriatur persequeris ad,
-          te his aliquip molestie. Veri tantas ad usu, mel ne sonet quaeque
-          assueverit. Enim eruditi euripidis his et, dictas admodum posidonium
-          ei pro. An duo tempor maluisset honestatis. Lorem ipsum dolor sit
-          amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-          tincidunt ut laoreet.Est sint magna mucius te, iudico integre
-          gubergren no vis. Assum doming et pro, est ei inermis corpora
-          argumentum. Eos graece sadipscing et, pri dico salutandi consetetur
-          et, explicari voluptatum mei at. Ex cum nisl epicurei, sea in molestie
-          theophrastus, nibh tollit apeirian no vis. Eum an vocibus gubergren
-          intellegam, quo id soluta iisque phaedrum.
+          This would be where each project description would be done. Until
+          then, Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          Assumenda expedita eaque delectus fugiat odio sapiente magni alias
+          dolorum, nesciunt natus modi perspiciatis quos esse nemo, sequi
+          incidunt accusamus quam? Temporibus.
         </p>
         <div class="project-media row">
           <div class="col-md-4">
@@ -114,7 +107,7 @@
             />
           </div>
         </div>
-        <div class="project-nav text-center">
+        <!-- <div class="project-nav text-center">
           <span class="float-left">
             <a class="open-project" href="project-6.html"
               >&leftarrow; Previous Project</a
@@ -128,13 +121,13 @@
               >Next Project &rightarrow;
             </a>
           </span>
-        </div>
+        </div> -->
       </div>
-      <div class="row text-center">
+      <!-- <div class="row text-center">
         <div class="col-md-12 btn-email">
           <a class="btn lowercase">Holler at me</a>
         </div>
-      </div>
+      </div> -->
     </section>
   </div>
 </template>
@@ -204,6 +197,15 @@ export default {
       scope: false,
       currentScope: 0,
     }
+  },
+  watch: {
+    scope: function (newVal) {
+      setTimeout(() => {
+        console.log('relaying the grid')
+        this.relayoutGrid()
+      }, 3000)
+      return newVal
+    },
   },
   computed: {
     ...mapGetters(['projectList']),
@@ -289,4 +291,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.back {
+  cursor: pointer;
+}
+</style>
