@@ -13,7 +13,7 @@
           :words="[
             'Writer',
             'Creative',
-            'Developer',
+            'Engineer',
             'Inbetweener',
             'Photographer',
             'Musician',

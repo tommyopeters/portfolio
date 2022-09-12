@@ -50,6 +50,8 @@
                     @load="onImageLoad"
                     :src="project.img"
                     alt=""
+                    :height="project?.height"
+                    :width="project?.width"
                   />
                 </div>
               </div>
@@ -200,10 +202,7 @@ export default {
   },
   watch: {
     scope: function (newVal) {
-      setTimeout(() => {
-        console.log('relaying the grid')
-        this.relayoutGrid()
-      }, 3000)
+      this.relayoutGrid()
       return newVal
     },
   },

@@ -7,6 +7,8 @@ export const state = () => {
         group: 'blackjack',
         category: 'game',
         img: '/masonry/games/blackjack/001.png',
+        width: 1920,
+        height: 927,
         video: null,
       },
       {
