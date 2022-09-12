@@ -27,7 +27,7 @@
             >
               <div
                 class="portfolio-item col-md-4 col-sm-6 col-xs-12"
-                :class="project.group"
+                :class="project.category"
                 v-for="(project, index) in projectList"
                 :key="index"
               >
@@ -140,62 +140,64 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   props: ['open'],
   data() {
     return {
       imageLoadCounter: 0,
-      projectList: [
-        {
-          scope: 0,
-          name: 'Blackjack',
-          group: 'game',
-          img: '/masonry/games/blackjack/001.png',
-          video: null,
-        },
-        {
-          scope: 0,
-          name: 'Phoneography',
-          group: 'phoneography',
-          img: '/masonry/phoneography/001.jpg',
-          video: null,
-        },
-        {
-          scope: 0,
-          name: 'Monopoly',
-          group: 'game',
-          img: '/masonry/games/monopoly/001.png',
-          video: null,
-        },
-        {
-          scope: 0,
-          name: 'Phoneography',
-          group: 'phoneography',
-          img: '/masonry/phoneography/002.jpg',
-          video: null,
-        },
-        {
-          scope: 0,
-          name: 'Music with Celine',
-          group: 'music',
-          img: '/masonry/music/celine/003.jpg',
-          video: null,
-        },
-        {
-          scope: 0,
-          name: 'Phoneography',
-          group: 'phoneography',
-          img: '/masonry/phoneography/003.jpg',
-          video: null,
-        },
-        {
-          scope: 0,
-          name: 'Photography',
-          group: 'photography',
-          img: '/masonry/photography/001.jpg',
-          video: null,
-        },
-      ],
+      // projectList: [
+      // {
+      //   scope: 0,
+      //   name: 'Blackjack',
+      //   group: 'game',
+      //   img: '/masonry/games/blackjack/001.png',
+      //   video: null,
+      // },
+      // {
+      //   scope: 0,
+      //   name: 'Phoneography',
+      //   group: 'phoneography',
+      //   img: '/masonry/phoneography/001.jpg',
+      //   video: null,
+      // },
+      // {
+      //   scope: 0,
+      //   name: 'Monopoly',
+      //   group: 'game',
+      //   img: '/masonry/games/monopoly/001.png',
+      //   video: null,
+      // },
+      // {
+      //   scope: 0,
+      //   name: 'Phoneography',
+      //   group: 'phoneography',
+      //   img: '/masonry/phoneography/002.jpg',
+      //   video: null,
+      // },
+      // {
+      //   scope: 0,
+      //   name: 'Music with Celine',
+      //   group: 'music',
+      //   img: '/masonry/music/celine/003.jpg',
+      //   video: null,
+      // },
+      // {
+      //   scope: 0,
+      //   name: 'Phoneography',
+      //   group: 'phoneography',
+      //   img: '/masonry/phoneography/003.jpg',
+      //   video: null,
+      // },
+      // {
+      //   scope: 0,
+      //   name: 'Photography',
+      //   group: 'photography',
+      //   img: '/masonry/photography/001.jpg',
+      //   video: null,
+      // },
+      // ],
       scopes: [{}],
       currentFilter: '*',
       isotope: null,
@@ -204,11 +206,12 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['projectList']),
     filters: function () {
       let filters = ['*']
       this.projectList.forEach((project) => {
-        if (!filters.includes(project.group)) {
-          filters.push(project.group)
+        if (!filters.includes(project.category)) {
+          filters.push(project.category)
         }
       })
       console.log(filters)

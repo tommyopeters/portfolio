@@ -119,7 +119,7 @@
                       <li>Implemented new features to optimize user experience and engagement</li>
                       <li>
                         Worked with a team of over 10 people to optimize SEO and
-                        Acessibility
+                        Accessibility
                       </li>
                       <li>Tested, debugged and shipped 1000s of lines of code</li>
                     </ul>
@@ -131,7 +131,7 @@
                   </div>
                   <p>
                     <ul>
-                      <li>Maintained a core product within a development team of 4 </li>
+                      <li>Maintained a core product within a development team of four </li>
                       <li>Worked in an Agile environment to receive design and functional requirements</li>
                       <li>Ideated with team to upgrade system with productivity features</li>
                     </ul>
@@ -353,5 +353,7 @@ export default {
 .display-none{
   display: none !important;
 }
-
+.exp p ul{
+  list-style-type:circle;
+}
 </style>

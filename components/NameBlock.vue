@@ -18,8 +18,9 @@
             'Photographer',
             'Musician',
             'Neurodivergent',
-            'Coach',
+            'Mentor',
             'Non-Conformist',
+            'Videographer',
           ]"
         >
         </typewriter>
