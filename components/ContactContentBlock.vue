@@ -133,8 +133,12 @@
                 <i class="ion-ios-telephone-outline"></i>
               </div>
               <div class="contact-details">
-                <h5>Call</h5>
-                <p><a href="tel:+2348172127320">+234 817 212 7320</a></p>
+                <h5>Whatsapp</h5>
+                <p>
+                  <a class="whatsapp-link" href="https://wa.me/+2348114483193"
+                    >+234 811 448 3193</a
+                  >
+                </p>
               </div>
             </div>
             <div class="contact-content">
@@ -146,18 +150,6 @@
                 <p>tommyopeters@gmail.com</p>
               </div>
             </div>
-          </div>
-          <div class="col-md-12">
-            <!--Google Map-->
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.2764721565977!2d3.3537787509323165!3d6.61253072393156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b93cba817d48f%3A0xf5a9d799c30e4a87!2s2a%20Iyalla%20St%2C%20Oregun%5C%2C%20Ikeja!5e0!3m2!1sen!2sng!4v1567460025525!5m2!1sen!2sng"
-              style="border: 0"
-              allowfullscreen=""
-              width="800"
-              height="600"
-              frameborder="0"
-            ></iframe>
-            <!--Google Map End-->
           </div>
         </div>
       </div>
@@ -171,4 +163,11 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.whatsapp-link {
+  color: rgb(0, 225, 79);
+}
+.whatsapp-link:hover {
+  color: rgb(3, 93, 20);
+}
+</style>

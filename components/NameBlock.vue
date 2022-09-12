@@ -39,13 +39,13 @@
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://www.facebook.com/tommyopeters">
-            <i class="fab fa-facebook"></i>
+          <a target="_blank" href="https://twitter.com/tommyopeters">
+            <i class="fab fa-twitter"></i>
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://twitter.com/tommyopeters">
-            <i class="fab fa-twitter"></i>
+          <a target="_blank" href="https://www.tiktok.com/@tommyopeters">
+            <i class="fab fa-tiktok"></i>
           </a>
         </li>
         <li>

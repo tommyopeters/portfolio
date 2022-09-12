@@ -4,11 +4,15 @@
       <div class="block-content">
         <h3 class="block-title">My Blog</h3>
         <p>
-          These are mental snaptshots of my state of mind on different days.
-          Don't take too literally. Don't be too stiff. Don't be close-minded.
+          Coming soon
+          <!-- You're now going through mental snaptshots of my state of mind on
+          different days. Don't take too literally. Don't be too stiff. Don't be
+          close-minded.
+          <br />
+          <small>Coming soon</small> -->
         </p>
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-10 mx-auto">
             <div class="post">
               <div class="post-thumbnail">
@@ -165,7 +169,7 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
   </div>
