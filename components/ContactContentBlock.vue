@@ -4,7 +4,7 @@
       <div class="block-content">
         <h3 class="block-title">Get in touch</h3>
         <div class="row">
-          <div class="col-md-6">
+          <!-- <div class="col-md-6">
             <form
               class="contact-form bv-form"
               action="send_mail.php"
@@ -116,17 +116,17 @@
                 </div>
               </div>
             </form>
-          </div>
+          </div> -->
 
           <div class="col-md-5 offset-md-1">
             <div class="contact-content">
               <div class="contact-icon">
                 <i class="ion-ios-location-outline"></i>
               </div>
-              <div class="contact-details">
+              <!-- <div class="contact-details">
                 <h5>Address</h5>
                 <p>2A, Iyalla Street, Ikeja, Lagos, Nigeria</p>
-              </div>
+              </div> -->
             </div>
             <div class="contact-content">
               <div class="contact-icon">

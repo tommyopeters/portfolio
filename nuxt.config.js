@@ -58,7 +58,13 @@ export default {
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    loaders: {
+      vue: {
+        compiler: require('vue-template-babel-compiler'),
+      },
+    },
+  },
 
   server: {
     host: '0.0.0.0',

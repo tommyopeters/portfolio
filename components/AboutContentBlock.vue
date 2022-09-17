@@ -150,7 +150,6 @@
                       <li>Participated in initial wave of frontend developers learning and implementing Vue.js library</li>
                       <li>Participated in brain storming sessions for business strategies</li>
                       <li>Awarded Trailblazer Award (2020) for having business impact of over $3,000 dollars within first 6 months</li>
-                      <li>Took initiative to save company $3,000 within first half of first year</li>
                       <li>Used HTML, CSS (SASS) and JavaScript to improve usability, responsiveness and implement new features on major products</li>
                       <li>Built industry standard email templates for growth and marketing team and operations team with HTML and CSS</li>
                     </ul>
@@ -190,7 +189,7 @@
                     <h5>Aug 2018 - Sept 2019</h5>
                   </div>
                   <p>
-                    Voluntarily helping start-ups and individuals to develop web
+                    Pro bono work, helping start-ups and individuals to develop web
                     products for self-educational purposes.
                   </p>
                 </div>

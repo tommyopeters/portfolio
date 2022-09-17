@@ -31,10 +31,7 @@
                 v-for="(project, index) in projectList"
                 :key="index"
               >
-                <div
-                  class="portfolio-column"
-                  @click="changeScope(project.scope)"
-                >
+                <div class="portfolio-column" @click="changeScope(project)">
                   <div class="portfolio-hover">
                     <div class="portfolio-content">
                       <h2>{{ project.name.toUpperCase() }}</h2>
@@ -43,7 +40,19 @@
                     </div>
                     <div class="portfolio-overlay"></div>
                   </div>
+                  <video
+                    :height="project?.height"
+                    :width="project?.width"
+                    v-if="project.video"
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                  >
+                    <source :src="project.video" />
+                  </video>
                   <nuxt-img
+                    v-else
                     format="webp"
                     quality="100"
                     loading="lazy"
@@ -69,17 +78,11 @@
       <div class="back" @click="scope = false">&lt; Back</div>
       <div class="block-content">
         <div class="project-head">
-          <h1 class="block-title">Single Project - Gallery</h1>
-          <div class="tags"><span>Category : </span> Graphic / Apps</div>
-          <div class="tags"><span>Date : </span> 10/09/20222</div>
+          <h1 class="block-title">Single Project View</h1>
+          <!-- <div class="tags"><span>Category : </span> Graphic / Apps</div>
+          <div class="tags"><span>Date : </span> 10/09/20222</div> -->
         </div>
-        <p class="project-description">
-          This would be where each project description would be done. Until
-          then, Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Assumenda expedita eaque delectus fugiat odio sapiente magni alias
-          dolorum, nesciunt natus modi perspiciatis quos esse nemo, sequi
-          incidunt accusamus quam? Temporibus.
-        </p>
+        <p class="project-description">I'm still working on this view.</p>
         <div class="project-media row">
           <div class="col-md-4">
             <nuxt-img
@@ -215,7 +218,7 @@ export default {
           filters.push(project.category)
         }
       })
-      console.log(filters)
+
       return filters
     },
   },
@@ -243,35 +246,40 @@ export default {
     onImageLoad() {
       this.imageLoadCounter++
       if (this.imageLoadCounter == this.projectList.length) {
-        console.log('IMAGES LOADED')
         this.relayoutGrid()
         // this.imageLoadCounter = 0
       }
     },
     filter(item) {
       this.currentFilter = item
-      console.log(`this.isotope.isotope({ filter: ${item} })`)
+
       this.isotope.isotope({ filter: item == '*' ? item : '.' + item })
     },
-    changeScope(scope) {
-      this.currentScope = scope
+    changeScope(project) {
+      if (project.url) {
+        var link = document.createElement('a')
+        link.setAttribute('target', '_blank')
+        link.href = project.url
+        document.body.appendChild(link)
+        link.click()
+      }
+      this.currentScope = project.scope
       this.scope = true
     },
   },
   mounted() {
     this.isotope = $('#portfolio-container')
-    console.log(this.isotope)
   },
 
   // mounted() {
   //   var $container = $('#portfolio-container')
 
-  //   console.log($container.isotope)
+  //
   //   if (this.open) {
   //     //Portfolio masonry
   //     var $container = $('#portfolio-container')
 
-  //     console.log($container.isotope)
+  //
   //     $container.isotope({
   //       filter: '*',
   //       masonry: {

@@ -44,11 +44,6 @@
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://www.tiktok.com/@tommyopeters">
-            <i class="fab fa-tiktok"></i>
-          </a>
-        </li>
-        <li>
           <a target="_blank" href="https://www.instagram.com/tommyopeters/">
             <i class="fab fa-instagram"></i>
           </a>
@@ -56,6 +51,14 @@
         <li>
           <a target="_blank" href="https://www.github.com/tommyopeters/">
             <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            href="https://www.youtube.com/channel/UCd5Sbh-Gnqv9ojTDCTyuuLg"
+          >
+            <i class="fab fa-youtube"></i>
           </a>
         </li>
       </ul>
